@@ -32,7 +32,7 @@ const PublicDashboard = () => {
   const fetchUserOrders = async () => {
     if (user) {
       try {
-        const response = await fetch('http://localhost:5001/inventix/orders')
+        const response = await fetch('https://inventory-server-12od.onrender.com/inventix/orders')
         const allOrders = await response.json()
         const myOrders = allOrders.filter(order => order.customerName === user.name)
         setUserOrders(myOrders)
@@ -108,7 +108,7 @@ const PublicDashboard = () => {
         estimatedDelivery: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString().split('T')[0]
       }
       
-      const response = await fetch('http://localhost:5001/inventix/orders', {
+      const response = await fetch('https://inventory-server-12od.onrender.com/inventix/orders', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(orderData)
@@ -136,7 +136,7 @@ const PublicDashboard = () => {
   const deleteOrder = async (orderId) => {
     if (confirm('Are you sure you want to delete this order?')) {
       try {
-        const response = await fetch(`http://localhost:5001/inventix/orders/${orderId}`, {
+        const response = await fetch(`https://inventory-server-12od.onrender.com/inventix/orders/${orderId}`, {
           method: 'DELETE'
         })
         

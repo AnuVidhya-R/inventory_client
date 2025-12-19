@@ -27,7 +27,7 @@ const Register = () => {
     }
 
     try {
-      const response = await fetch('http://localhost:5001/inventix/register', {
+      const response = await fetch('https://inventory-server-12od.onrender.com/inventix/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

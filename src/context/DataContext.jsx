@@ -57,7 +57,7 @@ export const DataProvider = ({ children }) => {
   // Fetch products from database
   const fetchProducts = async () => {
     try {
-      const response = await fetch('http://localhost:5001/inventix/products')
+      const response = await fetch('https://inventory-server-12od.onrender.com/inventix/products')
       if (response.ok) {
         const dbProducts = await response.json()
         // Add default products if database is empty
@@ -90,14 +90,14 @@ export const DataProvider = ({ children }) => {
           ]
           // Add default products to database
           for (const product of defaultProducts) {
-            await fetch('http://localhost:5001/inventix/products', {
+            await fetch('https://inventory-server-12od.onrender.com/inventix/products', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify(product)
             })
           }
           // Fetch again to get products with IDs
-          const newResponse = await fetch('http://localhost:5001/inventix/products')
+          const newResponse = await fetch('https://inventory-server-12od.onrender.com/inventix/products')
           const newProducts = await newResponse.json()
           setProducts(newProducts.map(p => ({ ...p, id: p._id })))
         } else {

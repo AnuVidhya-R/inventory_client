@@ -69,7 +69,7 @@ const AdminDashBoard = () => {
   
   const fetchCustomers = async () => {
     try {
-      const response = await fetch('http://localhost:5001/inventix/users')
+      const response = await fetch('https://inventory-server-12od.onrender.com/inventix/users')
       const users = await response.json()
       setRealCustomers(users.filter(u => u.role !== 'admin'))
     } catch (error) {
@@ -128,7 +128,7 @@ const AdminDashBoard = () => {
       }
       
       // Save to database
-      fetch('http://localhost:5001/inventix/products', {
+      fetch('https://inventory-server-12od.onrender.com/inventix/products', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newProduct)
@@ -153,7 +153,7 @@ const AdminDashBoard = () => {
       
       // Update in database if it has an _id (from database)
       if (selectedItem._id) {
-        fetch(`http://localhost:5001/inventix/products/${selectedItem._id}`, {
+        fetch(`https://inventory-server-12od.onrender.com/inventix/products/${selectedItem._id}`, {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(updatedProduct)
@@ -173,7 +173,7 @@ const AdminDashBoard = () => {
     } else if (modalType === 'update-stock') {
       // Update in database if it has an _id (from database)
       if (selectedItem._id) {
-        fetch(`http://localhost:5001/inventix/products/${selectedItem._id}`, {
+        fetch(`https://inventory-server-12od.onrender.com/inventix/products/${selectedItem._id}`, {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ stock: parseInt(formData.stock) })
@@ -246,7 +246,7 @@ const AdminDashBoard = () => {
   
   const updateOrderStatus = async (id, newStatus) => {
     try {
-      const response = await fetch(`http://localhost:5001/inventix/orders/${id}`, {
+      const response = await fetch(`https://inventory-server-12od.onrender.com/inventix/orders/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ status: newStatus })

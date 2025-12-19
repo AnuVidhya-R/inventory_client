@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://localhost:5001/inventix';
+const API_BASE_URL = 'https://inventory-server-12od.onrender.com/inventix';
 
 const apiCall = async (endpoint, options = {}) => {
     const response = await fetch(`${API_BASE_URL}${endpoint}`, {
