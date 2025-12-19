@@ -4,7 +4,7 @@ import { useData } from '../context/DataContext'
 import TodoList from '../components/TodoList'
 import { api } from '../services/api'
 import Popup from '../components/Popup'
-import './css/AdminDashboard.css'
+import './css/AdminDashBoard.css'
 
 const AdminDashBoard = () => {
   const [activeSection, setActiveSection] = useState('dashboard')
