@@ -246,7 +246,7 @@ const AdminDashBoard = () => {
   
   const updateOrderStatus = async (id, newStatus) => {
     try {
-      const response = await fetch(`https://inventory-server-1-atx9.onrender.com+/inventix/orders/${id}`, {
+      const response = await fetch(`https://inventory-server-1-atx9.onrender.com/inventix/orders/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ status: newStatus })
