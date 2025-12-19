@@ -3,7 +3,7 @@ import React from 'react'
 import AdminDashBoard from './Dashboard/AdminDashBoard'
 import PublicDashboard from './Dashboard/PublicDashboard'
 import TodoList from './components/TodoList'
-import Header from './Components/Header'
+import Header from './components/Header'
 
 import Home from './Pages/Home'
 import Features from './Pages/Features'
